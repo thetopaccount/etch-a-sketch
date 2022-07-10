@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#square-grid {
+  flex: 1;
+  max-width: 90vh;
+  height: 90vh;
+}
+
+.square-cell {
+  border: 0.5px solid lightgray;
+  flex: 1;
+}
+
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
