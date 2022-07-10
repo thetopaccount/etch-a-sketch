@@ -3,7 +3,7 @@ const GRID_SIZE = 16;
 
 function createGrid(row) {
   if (row > 0) {
-    let rowElement = createColumn((GRID_SIZE - row) + 1);
+    let rowElement = createRow((GRID_SIZE - row) + 1);
     document.getElementById('square-grid').appendChild(rowElement);
     row -= 1;
     createGrid(row);
@@ -18,7 +18,7 @@ function createSquare() {
 }
 
 
-function createColumn(rowNumber) {
+function createRow(rowNumber) {
   let rowDiv = document.createElement('div');
   rowDiv.id = `row-${rowNumber}`;
   rowDiv.classList.add('grid-row');
