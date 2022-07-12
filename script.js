@@ -1,8 +1,8 @@
-const GRID_SIZE = 16;
+let GRID_SIZE;
 
 
 function createGrid(row) {
-  if (row > 0) {
+  if (row > 0 && row <= GRID_SIZE) {
     let rowElement = createRow((GRID_SIZE - row) + 1);
     document.getElementById('square-grid').appendChild(rowElement);
     row -= 1;
@@ -33,5 +33,15 @@ function createRow(rowNumber) {
 }
 
 
-createGrid(GRID_SIZE);
+document.getElementById('grid-size')
+.addEventListener('keydown', (e) => {
+  let code = (e.keyCode ? e.keyCode : e.which);
+  if (!(code >= 48 && code <= 57)) {
+    e.preventDefault();
+  }
+  else {
+    GRID_SIZE = e.target.value;
+    createGrid(GRID_SIZE);
+  }
+});
 

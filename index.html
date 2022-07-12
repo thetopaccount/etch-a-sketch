@@ -8,6 +8,16 @@
   </head>
   
   <body>
+    <div id="settings">
+      <h1 id="app-heading">Etch-A-Sketch</h1>
+      <div class="input-container">
+        <label for="grid-size" class="input-heading">Set grid size</label>
+        <input id="grid-size" min="1" max="100" type="number" 
+          placeholder="1-100 (squares per side)" value="16"
+          inputmode="numeric"
+        />
+      </div>
+    </div>
     <div id="square-grid"></div>
   </body>
 </html>
