@@ -26,7 +26,7 @@ function createRow(rowNumber) {
 
 function createSquare() {
   let squareDiv = document.createElement('div');
-  squareDiv.classList.add('square-cell');
+  squareDiv.classList.add('square-cell');  
   return squareDiv;
 }
 
@@ -49,7 +49,11 @@ const allowOnlyNumbers = (element) => {
 
 
 let GRID_SIZE;
+let SELECTED_COLOR = '#000000';
+let mousedown = false;
 let gridSizeElement = document.getElementById('grid-size');
+let colorPickerElement = document.getElementById('color-picker');
+let squareGridElement = document.getElementById('square-grid');
 
 
 // Event listeners start
@@ -61,11 +65,35 @@ gridSizeElement.addEventListener('keydown', (e) => {
 
 gridSizeElement.addEventListener('input', (e) => {
   limitChars(e.target, 2);
-  document.getElementById('square-grid').replaceChildren();
     
   if (e.target.value) {
-    GRID_SIZE = parseInt(e.target.value);
-    createGrid(GRID_SIZE);
+    if (e.target.value == GRID_SIZE) {
+      return;
+    }
+    else {
+      document.getElementById('square-grid').replaceChildren();
+      GRID_SIZE = parseInt(e.target.value);
+      createGrid(GRID_SIZE);
+    }
+  }
+});
+
+colorPickerElement.addEventListener('change', (e) => {
+  SELECTED_COLOR = e.target.value;
+});
+
+squareGridElement.addEventListener('mousedown', (e) => {
+  mousedown = true;
+  e.target.style.backgroundColor = SELECTED_COLOR;
+});
+
+squareGridElement.addEventListener('mouseup', (e) => {
+  mousedown = false;
+});
+
+squareGridElement.addEventListener('mouseover', (e) => {
+  if (mousedown) {
+    e.target.style.backgroundColor = SELECTED_COLOR;
   }
 });
 
@@ -73,6 +101,9 @@ gridSizeElement.addEventListener('input', (e) => {
 
 
 window.onload = () => {
-  gridSizeElement.value = null;
+  GRID_SIZE = 16;
+  gridSizeElement.value = GRID_SIZE;
+  colorPickerElement.value = '#000000';
+  createGrid(GRID_SIZE);
 }
 
