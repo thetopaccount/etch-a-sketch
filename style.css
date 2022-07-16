@@ -23,6 +23,7 @@ body {
   background-color: rgba(0,0,0,0);
   font-size: 1.25em !important;
   font-family: monospace !important;
+  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
@@ -30,8 +31,10 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
-input[type=number] {
+input[type=number],
+input[type=text] {
   -moz-appearance: textfield;
+  cursor: text !important;
 }
 
 .input-container > input:focus-visible,
@@ -131,5 +134,6 @@ input[type=number] {
 
 .button-container > button:hover {
   box-shadow: 0 0 .5rem #ead315;
+  cursor: pointer;
 }
 
