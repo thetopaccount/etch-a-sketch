@@ -1,3 +1,13 @@
+let GRID_SIZE;
+let PREVIOUS_COLOR = '#000000';
+let SELECTED_COLOR = '#000000';
+let mousedown = false;
+let gridSizeElement = document.getElementById('grid-size');
+let colorPickerElement = document.getElementById('color-picker');
+let squareGridElement = document.getElementById('square-grid');
+let eraserElement = document.getElementById('eraser-toggle');
+let resetElement = document.getElementById('reset-grid');
+
 
 function createGrid(row) {
   if (row > 0 && row <= GRID_SIZE) {
@@ -48,16 +58,6 @@ const allowOnlyNumbers = (element) => {
 }
 
 
-let GRID_SIZE;
-let PREVIOUS_COLOR = '#000000';
-let SELECTED_COLOR = '#000000';
-let mousedown = false;
-let gridSizeElement = document.getElementById('grid-size');
-let colorPickerElement = document.getElementById('color-picker');
-let squareGridElement = document.getElementById('square-grid');
-let eraserElement = document.getElementById('eraser-toggle');
-
-
 // Event listeners start
 
 gridSizeElement.addEventListener('keydown', (e) => {
@@ -73,7 +73,7 @@ gridSizeElement.addEventListener('input', (e) => {
       return;
     }
     else {
-      document.getElementById('square-grid').replaceChildren();
+      squareGridElement.replaceChildren();
       GRID_SIZE = parseInt(e.target.value);
       createGrid(GRID_SIZE);
     }
@@ -109,6 +109,12 @@ eraserElement.addEventListener('click', () => {
     SELECTED_COLOR = PREVIOUS_COLOR;
     eraserElement.style.fontSize = '1.25em';
   }
+});
+
+resetElement.addEventListener('click', () => {
+  squareGridElement.replaceChildren();
+  GRID_SIZE = parseInt(gridSizeElement.value);
+  createGrid(GRID_SIZE);
 });
 
 // Event listeners end
