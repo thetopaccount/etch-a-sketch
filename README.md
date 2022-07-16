@@ -1,3 +1,3 @@
 Hello and welcome to my Etch-A-Sketch project!
-Take a look around, clone the repo and try it out!
 
+To check it out, [just click here](https://thetopaccount.github.io/etch-a-sketch/)!
