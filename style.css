@@ -75,6 +75,7 @@ input[type=number] {
   gap: 3rem;
   width: 40%;
   margin: 0 0 3rem 0;
+  padding: 1rem 0;
   overflow: hidden;
 }
 
@@ -118,7 +119,6 @@ input[type=number] {
 }
 
 .button-container > button {
-  margin: 0 0 1rem 0;
   padding: 1rem;
   font-weight: bold;
   font-family: monospace !important;
