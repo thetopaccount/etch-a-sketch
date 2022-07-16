@@ -1,20 +1,28 @@
 body {
+  box-sizing: border-box;
   margin: 0;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-flow: row wrap;
   height: 100vh;
   min-height: 20rem;
+  background-color: #1a1f28;
+  font-family: monospace !important;
 }
 
 .input-container > input {
-  outline: 1px solid lightseagreen;
+  outline: 1px solid #ead315;
   border: 0;
   border-radius: 0.5rem;
   padding: 1.5rem;
   background-color: white;
   width: auto;
+  color: tomato;
+  background-color: rgba(0,0,0,0);
+  font-size: 1.25em !important;
+  font-family: monospace !important;
 }
 
 input::-webkit-outer-spin-button,
@@ -26,11 +34,20 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-input:focus-visible {
+.input-container > input:focus-visible,
+.input-container > input:hover {
   border: 0;
-  outline: 2px solid lightseagreen;
+  outline: 2px solid #ead315;
   background-color: rgba(0,0,0,0);
-  box-shadow: 0 0 .5rem lightseagreen;
+  box-shadow: 0 0 .5rem #ead315;
+}
+
+.input-container > input,
+.input-container > input:focus-visible,
+.input-container > input:hover,
+.button-container > button,
+.button-container > button:hover {
+  transition: 0.5s ease;
 }
 
 .input-container > label {
@@ -39,11 +56,11 @@ input:focus-visible {
   background: white;
   padding: 8px;
   width: max-content;
-  font-size: smaller;
-  color: lightseagreen;
+  color: #ead315;
+  background-color: #1a1f28;
 }
 
-.input-container {
+.input-container, .button-container {
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -53,10 +70,11 @@ input:focus-visible {
 #settings {
   display: flex;
   flex-direction: column;
-  height: 80%;
-  width: 40%;
   justify-content: space-evenly;
   align-items: center;
+  gap: 3rem;
+  width: 40%;
+  margin: 0 0 3rem 0;
   overflow: hidden;
 }
 
@@ -64,6 +82,11 @@ input:focus-visible {
   font-size: 4vw;
   font-weight: bold;
   margin: 0;
+  background-image: linear-gradient(to right, #ead315, tomato);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #square-grid {
@@ -74,6 +97,7 @@ input:focus-visible {
 }
 
 .square-cell {
+  background-color: white;
   border: 0.5px solid lightgray;
   flex: 1;
   transition: background-color .1s;
@@ -93,3 +117,18 @@ input:focus-visible {
   height: 5em;
 }
 
+.button-container > button {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  font-weight: bold;
+  font-family: monospace !important;
+  font-size: 1.25em;
+  border: 0;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to right, #ead315, tomato);
+  color: #1a1f28;
+}
+
+.button-container > button:hover {
+  box-shadow: 0 0 .5rem #ead315;
+}
