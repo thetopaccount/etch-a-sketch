@@ -49,11 +49,13 @@ const allowOnlyNumbers = (element) => {
 
 
 let GRID_SIZE;
+let PREVIOUS_COLOR = '#000000';
 let SELECTED_COLOR = '#000000';
 let mousedown = false;
 let gridSizeElement = document.getElementById('grid-size');
 let colorPickerElement = document.getElementById('color-picker');
 let squareGridElement = document.getElementById('square-grid');
+let eraserElement = document.getElementById('eraser-toggle');
 
 
 // Event listeners start
@@ -94,6 +96,18 @@ squareGridElement.addEventListener('mouseup', (e) => {
 squareGridElement.addEventListener('mouseover', (e) => {
   if (mousedown) {
     e.target.style.backgroundColor = SELECTED_COLOR;
+  }
+});
+
+eraserElement.addEventListener('click', () => {
+  if (!['white', '#ffffff'].includes(SELECTED_COLOR)) {
+    PREVIOUS_COLOR = SELECTED_COLOR;
+    SELECTED_COLOR = 'white';
+    eraserElement.style.fontSize = '1.5em';
+  }
+  else {
+    SELECTED_COLOR = PREVIOUS_COLOR;
+    eraserElement.style.fontSize = '1.25em';
   }
 });
 
