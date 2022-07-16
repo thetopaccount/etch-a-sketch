@@ -74,7 +74,7 @@ input[type=number] {
   align-items: center;
   gap: 3rem;
   width: 40%;
-  margin: 0 0 3rem 0;
+  margin: 0 0 2rem;
   padding: 1rem 0;
   overflow: hidden;
 }
@@ -82,7 +82,7 @@ input[type=number] {
 #app-heading {
   font-size: 4vw;
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 1rem;
   background-image: linear-gradient(to right, #ead315, tomato);
   background-clip: text;
   color: transparent;
@@ -132,3 +132,4 @@ input[type=number] {
 .button-container > button:hover {
   box-shadow: 0 0 .5rem #ead315;
 }
+
