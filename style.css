@@ -22,7 +22,6 @@ body {
   width: auto;
   color: tomato;
   background-color: rgba(0,0,0,0);
-  font-size: 1.25em !important;
   font-family: monospace !important;
   cursor: pointer;
 }
@@ -51,7 +50,7 @@ input[type=text] {
 .input-container > input:hover,
 .button-container > button,
 .button-container > button:hover {
-  transition: 0.5s ease;
+  transition: 0.25s ease;
 }
 
 .input-container > label {
@@ -76,7 +75,7 @@ input[type=text] {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   width: 40%;
   padding: 1rem 0;
   overflow: hidden;
@@ -125,7 +124,6 @@ input[type=text] {
   padding: 1rem;
   font-weight: bold;
   font-family: monospace !important;
-  font-size: 1.25em;
   border: 0;
   border-radius: 0.5rem;
   background-image: linear-gradient(to right, #ead315, tomato);

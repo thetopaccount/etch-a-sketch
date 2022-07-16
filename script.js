@@ -107,7 +107,7 @@ eraserElement.addEventListener('click', () => {
   }
   else {
     SELECTED_COLOR = PREVIOUS_COLOR;
-    eraserElement.style.fontSize = '1.25em';
+    eraserElement.style.fontSize = '110%';
   }
 });
 
