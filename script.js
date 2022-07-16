@@ -103,18 +103,21 @@ eraserElement.addEventListener('click', () => {
   if (!['white', '#ffffff'].includes(SELECTED_COLOR)) {
     PREVIOUS_COLOR = SELECTED_COLOR;
     SELECTED_COLOR = 'white';
-    eraserElement.style.fontSize = '1.5em';
   }
   else {
     SELECTED_COLOR = PREVIOUS_COLOR;
-    eraserElement.style.fontSize = '110%';
   }
+  eraserElement.classList.toggle('button-active');
 });
 
 resetElement.addEventListener('click', () => {
   squareGridElement.replaceChildren();
   GRID_SIZE = parseInt(gridSizeElement.value);
   createGrid(GRID_SIZE);
+  
+  if (eraserElement.classList.contains('button-active')) {
+    eraserElement.click();
+  }
 });
 
 // Event listeners end
